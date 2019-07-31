@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+</head>
+
+<body>
+    <div id="app">
+        {{car.brand}}
+        <p v-on:click="clickFn">{{msg}}</p>
+        <!-- <div v-text="msg" class="test">
+            <p>text</p>
+        </div>
+        <input type="text" v-model='car.owner.ownerName'> -->
+    </div>
+</body>
+<!-- <script src="./vue.min.js"></script> -->
+<script src="./compile.js"></script>
+<script src="./observe.js"></script>
+<script src="./watcher.js"></script>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: 'hello world',
+            name: '李逸威',
+            time: '20190617',
+            car:{
+                brand:'大众',
+                color:'yellow',
+                owner:{
+                    ownerName:"lyw"
+                }
+            }
+        },
+        methods: {
+            clickFn() { 
+                // console.log(this);
+                this.car.owner.ownerName = 'baibai'
+            }
+        },
+    })
+
+    console.log(new Vue());
+
+</script>
+
+</html>
